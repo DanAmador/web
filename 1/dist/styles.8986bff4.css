@@ -1,0 +1,169 @@
+a {
+    color: #000;
+}
+
+article,
+a,
+p,
+h1 {
+    font-family: 'Roboto', sans-serif !important;
+    font-style: normal !important;
+    line-height: 145% !important;
+}
+
+
+/* header */
+
+.header .logo:hover {
+    filter: saturate(0%);
+}
+
+.header {
+    width: 100%;
+    max-height: 100px;
+    min-height: 100px;
+    height: 100px;
+}
+
+
+/* CSS link hover (green) */
+
+.header .logo {
+    width: 30%;
+    height: 100%;
+    max-height: inherit;
+    min-height: inherit;
+    float: left;
+    padding: 10px 20px;
+}
+
+
+/* [ON BIG SCREEN] */
+
+
+/* Wrapper */
+
+#hamnav {
+    width: 100%;
+    max-height: inherit;
+    min-height: inherit;
+    /* Optional */
+    /* Center vertically and horizontally */
+    position: absolute;
+    background: rgb(190, 190, 194);
+    background: -moz-linear-gradient(0deg, rgba(190, 190, 194, 1) 69%, rgba(131, 131, 131, 1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(190, 190, 194, 1) 69%, rgba(131, 131, 131, 1) 100%);
+    background: linear-gradient(0deg, rgba(190, 190, 194, 1) 69%, rgba(131, 131, 131, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#bebec2", endColorstr="#838383", GradientType=1);
+}
+
+
+/* Hide Hamburger */
+
+#hamnav label,
+#hamburger {
+    display: none;
+}
+
+#navItems {
+    padding-top: 40px;
+}
+
+
+/* Horizontal Menu Items */
+
+#hamitems {
+    display: flex;
+}
+
+#hamitems a {
+    width: 20%;
+    /* 100% / 5 tabs = 20% */
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s;
+}
+
+#hamitems a:hover {
+    text-decoration: underline;
+    background: gray;
+}
+
+
+/* [ON SMALL SCREENS] */
+
+@media screen and (max-width: 768px) {
+    /* Show Hamburger Icon */
+    #hamnav label {
+        display: inline-block;
+        color: white;
+        position: absolute;
+        right: 10px;
+    }
+    /* Break down menu items into vertical */
+    #hamitems a {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        color: black;
+        background-color: white;
+        border-top: 1px solid #333;
+    }
+    /* Toggle Show/Hide Menu */
+    #hamitems {
+        padding-top: 50px;
+        display: none;
+    }
+    #hamnav input:checked~#hamitems {
+        display: block;
+    }
+}
+
+article {
+    -webkit-columns: 3 200px;
+    -moz-columns: 3 200px;
+    columns: 3 200px;
+    -moz-column-fill: auto;
+    column-fill: auto;
+}
+
+a {
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: lawngreen;
+}
+
+table {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    transition-property: background-color;
+    background-color: #f5f5f5;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/*# sourceMappingURL=/styles.8986bff4.css.map */
