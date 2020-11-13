@@ -5,7 +5,7 @@ a {
 article,
 a,
 p,
-h1 {
+h1,th, tr, td {
     font-family: 'Roboto', sans-serif !important;
     font-style: normal !important;
     line-height: 145% !important;
@@ -164,6 +164,27 @@ tr:hover {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+article{
+
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top-color: greenyellow !important;
+    border-top: 1px solid;
+    border-left: 1px grey !important;
+    border-right: 1px grey !important;
+    border-bottom-color: transparent;
+    border-bottom: 1px solid;
+}
+.bottomonly
+{
+  border: solid 1px #555;
+  box-shadow: 0px 10px  5px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 10px  5px  rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0px 10px 5px  rgba(0,0,0,0.6);
+  -o-box-shadow: 0px 10px 5px  rgba(0,0,0,0.6);
 }
 
 /*# sourceMappingURL=/styles.8986bff4.css.map */
