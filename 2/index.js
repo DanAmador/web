@@ -149,4 +149,3 @@ for (i = 0; i < bttns.length; i++) {
     bttn.addEventListener("click", toggleKey, false);
 }
 
-BuildTable();

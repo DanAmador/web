@@ -2,13 +2,13 @@
 require 'world_data_parser.php';
 
 $wdp = new WorldDataParser();
-$csv = $wdp->parseCSV("./world_data_v1.csv");
+$csv = $wdp->parseCSV("../res/world_data_v1.csv");
 $xmlStatus = $wdp->saveXML($csv);
 
 if ($xmlStatus === true ){
-		echo "XML Savestatus: erfolgreich (1)";
+		echo "XML Saved";
 	} else {
-		echo "XML Savestatus: fehlgeschlagen (0)";
+		echo "XML Saved error ";
 	} 
 
 
