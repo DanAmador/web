@@ -41,10 +41,11 @@
 
 				<!-- [MENU ITEMS] -->
 				<ul id="hamitems">
-					<a href="./parse.php"><i class="fa fa-bars"></i> A1 - Table </a>
-					<a href="./save.php"><i class="fa fa-bars"></i> A2 - Parse </a>
-					<a><i class="fa fa-bars"></i> A2 - Save </a>
-					<a><i class="fa fa-bars"></i> A2 - Print </a>
+				<a><i class="fa fa-bars"></i> A1 - Table </a>
+
+					<a href="./parse.php"><i class="fa fa-bars"></i> A2 - Parse </a>
+					<a href="./save.php"><i class="fa fa-bars"></i> A2 - Save </a>
+					<a href="./print.php"><i class="fa fa-bars"></i> A2 - Print </a>
 					<a><i class="fa fa-bars"></i> A3 - REST </a>
 					<a><i class="fa fa-bars"></i> A4 - Vis </a>
 					<a><i class="fa fa-bars"></i> A5 - 3D </a>
