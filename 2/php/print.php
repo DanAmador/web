@@ -41,8 +41,8 @@
 
 				<!-- [MENU ITEMS] -->
 				<ul id="hamitems">
-					<a href="./php/parse.php"><i class="fa fa-bars"></i> A1 - Table </a>
-					<a href="./php/save.php"><i class="fa fa-bars"></i> A2 - Parse </a>
+					<a href="./parse.php"><i class="fa fa-bars"></i> A1 - Table </a>
+					<a href="./save.php"><i class="fa fa-bars"></i> A2 - Parse </a>
 					<a><i class="fa fa-bars"></i> A2 - Save </a>
 					<a><i class="fa fa-bars"></i> A2 - Print </a>
 					<a><i class="fa fa-bars"></i> A3 - REST </a>
@@ -104,18 +104,18 @@
 	$resultSave = $wdp->saveXML($csv);
 
 	if ($resultSave === true) {
-		echo ($wdp->printXML("../res/world_data.xml", "../res/world_data_xsl.xsl"));
+		echo ($wdp->printXML("./world_data.xml", "./world_data_xsl.xsl"));
 	}
 
 
 	?>
 
 
-	<script src="../index.js"></script>
 	<footer>
 		<p>Daniel Perezamador</p>
 		<p><a href="mailto:daniel.perezamador@mailbox.tu-dresden.de">daniel.perezamador@mailbox.tu-dresden.de</a></p>
 	</footer>
+	<script src="../util.js"></script>
 </body>
 
 </html>

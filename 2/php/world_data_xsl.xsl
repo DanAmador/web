@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<table>
+            <table id="myTable">
+
     <thead>
         <tr> 
             <th>ID</th>                
             <th>Name
-                <!-- Pfeil hoch und Pfeil runter, für den Sortieralgortihmus einfügen -->
                 <i class="fa fa-angle-up" style="color: rgb(108, 194, 43);"></i>
                 <i class="fa fa-angle-down" style="color: rgb(108, 194, 43);"></i>
             </th>
@@ -28,7 +28,6 @@
             <tr>
                 <xsl:for-each select="*">
                     <td>
-                        <!-- Wert der Knoten ausgeben -->
                         <xsl:value-of select="text()" />
                     </td>
                 </xsl:for-each>
