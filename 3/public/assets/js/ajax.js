@@ -109,23 +109,44 @@ $("#ad_submit").click(function (e) {
   var country_birth = $("#country_birth").val();
   var country_cellphone = $("#country_cellphone").val();
 
-  $.ajax({
-    type: "POST",
-    url: `${API_URL}/items`,
-    data: JSON.stringify({ name: country_name, birth_rate_per_1000: country_birth, cell_phones_per_100: country_cellphone }),
-    async: true,
-    contentType: "application/json",
-    dataType: 'text',
-    success: function (data) {
-      $("#status_new_country").append("<p> Added country " + country_name + " to list!</p>");
-      var x = document.getElementById('status_new_country');
-      x.style.backgroundColor = "lightgreen";
-      setTimeout(function () { $('#status_new_country').html(""); }, 2000);
-      getFullTable();
-    }, error: function (jqXHR, text, err) {
-      console.log(err);
-    }
-  });
+  if (country_name && country_birth && country_cellphone) {
+
+    $.ajax({
+      type: "POST",
+      url: `${API_URL}/items`,
+      data: JSON.stringify({ name: country_name, birth_rate_per_1000: country_birth, cell_phones_per_100: country_cellphone }),
+      async: true,
+      contentType: "application/json",
+      dataType: 'text',
+      success: function (data) {
+        let element = $("#status_new_country").append("<p> Added country " + country_name + " to list!</p>");
+        setTimeout(function () {
+          $("#status_new_country").children().remove();
+        }, 2000)
+        var x = document.getElementById('status_new_country');
+        x.style.backgroundColor = "lightgreen";
+        setTimeout(function () { $('#status_new_country').html(""); }, 2000);
+        getFullTable();
+      }, error: function (jqXHR, text, err) {
+        console.log(err);
+        let element = $("#status_new_country").append("<p> Error! </p>");
+        setTimeout(function () {
+          $("#status_new_country").children().remove();
+
+        }, 2000)
+        var x = document.getElementById('status_new_country');
+        x.style.backgroundColor = "red";
+      }
+    });
+  }else{
+    let element = $("#status_new_country").append("<p> Fill out the correct details! </p>");
+    var x = document.getElementById('status_new_country');
+    x.style.backgroundColor = "red";
+    setTimeout(function () {
+      $("#status_new_country").children().remove();
+
+    }, 2000)
+  }
 });
 
 $("#rm_submit").click(function (e) {
