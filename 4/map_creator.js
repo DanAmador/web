@@ -24,6 +24,7 @@ buildD3Components(1)
 buildD3Components(2)
 
 
+//baut die leaflet karte mit markers 
 function buildLeaflet() {
 
   marker.length = 0;
@@ -31,6 +32,7 @@ function buildLeaflet() {
     var lat = world_data[l].gps_lat;
     var long = world_data[l].gps_long;
     var m = new L.marker([lat, long]);
+    //jedes marker muss eine id mit 3 stellen haben
     if (l + 1 < 10) { m._mid = "00" + (l + 1); }
     else if (l + 1 >= 10 && l < 100) { m._mid = "0" + (l + 1); }
     else { m._mid = (l + 1); }
@@ -41,14 +43,14 @@ function buildLeaflet() {
     m.bindPopup(lastSelected + "<br/>from:" + world_data[l].name + "<br/>" + world_data[l][lastSelected]).closePopup();
     m.on('mouseover', (function (s) {
       return function () {
-        highlight('1', s._mid);
-        highlight('2', s._mid);
+        select_markers('1', s._mid);
+        select_markers('2', s._mid);
       }
     })(m));
     m.on('mouseout', (function (s) {
       return function () {
-        unhighlight('1', s._mid);
-        unhighlight('2', s._mid);
+        unselect_markers('1', s._mid);
+        unselect_markers('2', s._mid);
       }
     })(m));
   }
@@ -56,20 +58,22 @@ function buildLeaflet() {
 
 
 
-
-function highlight(idx, id) {
+//Gloable funktionen für die D3 und leaflet interaktiopn 
+function select_markers(idx, id) {
   document.getElementsByClassName(id)[idx - 1].style = "fill : navy";
   marker[parseInt(id) - 1]._icon.attributes[0].value = "marker.png";
 
 
 }
 
-function unhighlight(idx, id) {
+function unselect_markers(idx, id) {
   document.getElementsByClassName(id)[idx - 1].style = "fill : gray";
   marker[parseInt(id) - 1]._icon.attributes[0].value = "unselected.png";
 }
 
 
+
+//baut den d3 komponenten mit callbacks für updates 
 function buildD3Components(idx) {
   function barChange(select_id) {
     buildLeaflet();
@@ -118,8 +122,8 @@ function buildD3Components(idx) {
         else { return d[selected] / val + measures; }
       })
       .attr("class", function (d) { return d.id; })
-      .attr("onmouseover", function (d) { return "highlight('" + select_id + "','" + d.id + "')"; })
-      .attr("onmouseout", function (d) { return "unhighlight('" + select_id + "','" + d.id + "')"; })
+      .attr("onmouseover", function (d) { return "select_markers('" + select_id + "','" + d.id + "')"; })
+      .attr("onmouseout", function (d) { return "unselect_markers('" + select_id + "','" + d.id + "')"; })
       .style("fill", "gray");
 
   }

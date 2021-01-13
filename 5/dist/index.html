@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Aufgabe 5 </title>
+	<meta name="description" content="Aufgabe 5 mit Threejs ">
+	<meta name="author" content="Daniel Perezamador">
+	<meta name="keywords" content="AAAAAAAAAAAAAAAA :(">
+
+	<link href="/html5reset.5e90622b.css" type="text/css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic" rel="stylesheet" type="text/css">
+	<link href="/font-awesome.min.197582b5.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css">
+	<link href="/style.e308ff8e.css" type="text/css" rel="stylesheet">
+
+
+<script src="/html5reset.5e90622b.js"></script><script src="/font-awesome.min.197582b5.js"></script><script src="/style.e308ff8e.js"></script></head>
+
+<body>
+
+	<header id="sticky_header">
+		<nav class="container clearfix" role="navigation">
+			<a class="logo" href="/">world_data</a>
+			<ul id="main_nav" class="clearfix">
+				<li>
+					<a href=""><i class="fa fa-list-ul"></i>A1 - Table</a>
+				</li>
+				<li>
+					<a href=""><i class="fa fa-list-ul"></i>A2 - Parse</a>
+				</li>
+				<li>
+					<a href=""><i class="fa fa-list-ul"></i>A2 - Save</a>
+				</li>
+				<li>
+					<a href=""><i class="fa fa-list-ul"></i>A2 - Print</a>
+				</li>
+				<li>
+					<a href=""><i class="fa fa-list-ul"></i>A3 - REST</a>
+				</li>
+				<li>
+					<a href=""><i class="fa fa-list-ul"></i>A4 - Vis</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="container">
+		<section id="visualize_sec">
+			<table style="width: 100%;">
+				<tr>
+					<td>
+						<div id="barcontainer">
+							<div id="bar1"></div>
+							<div id="bar2"></div>
+						</div>
+					</td>
+					<td>
+						<select id="labelPicker">
+							<option value="birth_rate_per_1000">birth_rate_per_1000</option>
+							<option value="cell_phones_per_100">cell_phones_per_100</option>
+							<option value="children_per_woman">children_per_woman</option>
+							<option value="electricity_consumption_per_capita">electricity_consumption_per_capita</option>
+							<option value="gdp_per_capita">gdp_per_capita</option>
+							<option value="gdp_per_capita_growth">gdp_per_capita_growth</option>
+							<option value="inflation_annual">inflation_annual</option>
+							<option value="internet_user_per_100">internet_user_per_100</option>
+							<option value="life_expectancy">life_expectancy</option>
+							<option value="military_expenditure_percent_of_gdp">military_expenditure_percent_of_gdp
+							</option>
+
+						</select>
+						<select id="materialPicker">
+							<option value="//unpkg.com/three-globe/example/img/earth-dark.jpg">Dark</option>
+							<option value="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg">Blue</option>
+							<option value="//unpkg.com/three-globe/example/img/earth-day.jpg">Earth Day</option>
+							
+
+						</select>
+						<div id="globeViz" style="height: 600px; width: 500pt;"></div>
+
+					</td>
+				</tr>
+			</table>
+		</section>
+	</div>
+
+	<div class="clearfix"></div>
+
+	<footer>
+		<div class="container">
+			<div>
+
+			</div>
+			<div class="right">
+				<p>
+					This solution has been created by:<br>
+					Daniel Perezamador
+				</p>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<script src="//unpkg.com/three"></script>
+	<script src="//unpkg.com/three/examples/js/controls/TrackballControls.js"></script>
+	<script src="//unpkg.com/three-globe"></script>
+	<script type="text/javascript" src="/hardcoded_data.f7c016c3.js"></script>
+	<script type="text/javascript" src="/map_creator.a77c6439.js"></script>
+
+</body>
+
+</html>
